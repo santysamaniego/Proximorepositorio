@@ -1,0 +1,577 @@
+body, html, #root {
+  background-color: #fff5f7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #5a3e56;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1150px;
+  margin: 30px auto 60px auto;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 22px rgb(190 130 185 / 0.3);
+  padding: 30px 40px;
+}
+
+h2.formulario-titulo {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #9c4d9e;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 3px #d2a9d6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 30px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-grid > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.checkbox-label {
+  font-weight: 600;
+  color: #7a4d7a;
+  cursor: pointer;
+  user-select: none;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 18px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls > * {
+  min-width: 180px;
+}
+
+@media (max-width: 680px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+}
+
+/* Botones estilo */
+.btn {
+  border-radius: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: background-color 0.35s ease, color 0.3s ease;
+  font-size: 1rem;
+  padding: 10px 18px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #9e59a6;
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #6c3a75;
+}
+
+.btn-outline-primary {
+  color: #8f5297;
+  background-color: transparent;
+  border-color: #8f5297;
+}
+
+.btn-outline-primary:hover {
+  background-color: #8f5297;
+  color: white;
+  border-color: #8f5297;
+}
+
+.btn-success {
+  background-color: #6da260;
+  border: none;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #456832;
+}
+
+.btn-danger {
+  background-color: #cc4b6c;
+  border: none;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #862a40;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border: none;
+  color: #212529;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border: none;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+}
+
+/* Tablas con filas rosas suaves */
+.table {
+  border-radius: 15px;
+  border-collapse: separate !important;
+  border-spacing: 0 14px;
+  box-shadow: 0 0 20px rgb(230 185 210 / 0.3);
+  background-color: #fef6fb;
+  min-width: 100%;
+}
+
+.table thead tr {
+  background-color: #c995c2;
+  color: white;
+  font-weight: 700;
+}
+
+.table tbody tr {
+  background-color: #fcebf7;
+  transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #e0a7de !important;
+  cursor: pointer;
+  color: #570e5e;
+}
+
+th, td {
+  padding: 12px 14px;
+  border: none !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #5a355e;
+}
+
+/* Titulos asistencia */
+.asistencia-header {
+  color: #7a3b7a;
+  font-weight: 700;
+  border-bottom: 2px solid #ad85b3;
+  margin-bottom: 14px;
+  padding-bottom: 4px;
+}
+
+/* Botones asistencia con 3 estados: vacío, P (verde), A (rojo) */
+.btn-asistencia {
+  width: 32px;
+  height: 32px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 30px;
+  user-select: none;
+}
+
+.btn-presente {
+  background-color: #60b347;
+  border-color: #4d9138;
+  color: white;
+}
+
+.btn-presente:hover {
+  background-color: #407026;
+  border-color: #2f4918;
+}
+
+.btn-ausente {
+  background-color: #cc4b6c;
+  border-color: #a53650;
+  color: white;
+}
+
+.btn-ausente:hover {
+  background-color: #7e2d39;
+  border-color: #611f29;
+}
+
+.btn-light {
+  background-color: #fef6fb;
+  border-color: #d2a9d6;
+  color: transparent;
+  cursor: pointer;
+}
+
+.btn-light:hover {
+  background-color: #d2a9d6;
+  color: white;
+}
+
+/* Cards secciones */
+.card-section {
+  background-color: #fcf0fb;
+  padding: 18px 25px;
+  border-radius: 18px;
+  box-shadow: 0 1px 8px rgb(170 110 195 / 0.25);
+  margin-bottom: 38px;
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: 1px solid #8f5297;
+  background-color: white;
+  color: #8f5297;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #8f5297;
+  color: white;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-weight: 600;
+  color: #5a3e56;
+}
+
+/* Modal de confirmación y mensajes (menos transparente) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);  /* Más opaco para claridad */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;  /* Fondo blanco sólido */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  color: #333;  /* Texto oscuro para contraste */
+}
+
+.modal-content p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Modal de cumpleaños */
+.birthday-modal {
+  background-color: rgba(0, 0, 0, 0.9);  /* Más opaco */
+}
+
+.birthday-content {
+  background: linear-gradient(45deg, #ff9a9e, #fecfef);
+  color: white;
+  animation: confetti 2s infinite;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+  text-align: center;
+}
+
+.birthday-content h2 {
+  color: white;
+}
+
+.birthday-content p {
+  color: white;
+}
+
+.confetti {
+  font-size: 3rem;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+@keyframes confetti {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Modal de mensajes */
+.message-modal {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgb(255, 105, 180, 0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+.message-modal p {
+  font-size: 1.1rem;
+  color: #5a3e56;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive Design */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+    padding: 20px 30px;
+    margin: 20px auto 40px auto;
+  }
+
+  h2.formulario-titulo {
+    font-size: 2rem;
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 20px;
+  }
+
+  .controls {
+    gap: 10px;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .card-section {
+    padding: 15px 20px;
+    margin-bottom: 25px;
+  }
+
+  .pagination {
+    gap: 8px;
+  }
+
+  .modal-content {
+    max-width: 350px;
+    padding: 15px;
+  }
+
+  .birthday-content {
+    padding: 20px;
+  }
+}
+
+/* Móviles (hasta 767px) */
+@media (max-width: 767px) {
+  .container {
+    max-width: 95%;
+    padding: 15px 20px;
+    margin: 15px auto 30px auto;
+    border-radius: 15px;
+  }
+
+  h2.formulario-titulo {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .controls > * {
+    min-width: auto;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  .table {
+    font-size: 0.85rem;
+    border-spacing: 0 8px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    max-height: 250px;
+  }
+
+  .card-section {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .pagination button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .modal-content {
+    max-width: 90%;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .birthday-content {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .confetti {
+    font-size: 2rem;
+  }
+
+  .message-modal {
+    padding: 15px;
+  }
+
+  /* Ajustes específicos para listas y botones en móviles */
+  .button-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .button-group button {
+    width: 100%;
+  }
+}
+
+/* Pequeños móviles (hasta 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px 15px;
+  }
+
+  h2.formulario-titulo {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .table {
+    font-size: 0.8rem;
+  }
+
+  th, td {
+    padding: 6px 8px;
+  }
+
+  .modal-content {
+    padding: 10px;
+  }
+
+  .birthday-content {
+    padding: 10px;
+  }
+
+  .message-modal {
+    padding: 10px;
+  }
+}
